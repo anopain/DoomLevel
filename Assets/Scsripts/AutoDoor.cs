@@ -3,6 +3,7 @@ using UnityEngine;
 public class AutoDoor : MonoBehaviour
 {
     [SerializeField] private GameObject door;
+    [SerializeField] private bool canOpen = true;
     [SerializeField] private float speed = 2f;
 
     [SerializeField] private float maxMovement = 10f;
@@ -23,6 +24,8 @@ public class AutoDoor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (canOpen == false) return;
+
         if (doorDirection == DoorDirection.Up)
         {
             door.transform.Translate(Vector3.up * maxMovement * Time.deltaTime * speed);
@@ -43,6 +46,8 @@ public class AutoDoor : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (canOpen == false) return;
+
         if (doorDirection == DoorDirection.Up)
         {
             door.transform.Translate(Vector3.down * maxMovement * Time.deltaTime * speed);
