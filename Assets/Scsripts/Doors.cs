@@ -1,16 +1,6 @@
 using UnityEngine;
-
-public class Doors : MonoBehaviour
+public class Doors : MonoBehaviour 
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public bool isOpen = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

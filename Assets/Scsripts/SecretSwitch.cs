@@ -1,25 +1,28 @@
 using UnityEngine;
-
 public class SecretSwitch : Doors
 {
+    [SerializeField] private bool readyToPress = false;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"Trigger Entered");
-
-        if (other.CompareTag("Player") && Player.Instance.interacting)
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Secret Switch Activated!");
+            readyToPress = true;
         }
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            readyToPress = false;
+        }
+    }
+    private void Update()
+    {
+        if (readyToPress && Player.Instance.interacting)
+        {
+            isOpen = !isOpen;
+            Debug.Log("Secret Switch toggled. isOpen: " + isOpen);
+        }
     }
 }
