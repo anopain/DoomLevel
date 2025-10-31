@@ -1,14 +1,16 @@
+using System;
 using UnityEngine;
 
 public class AutoDoor : MonoBehaviour
 {
     [SerializeField] private GameObject door;
+    [SerializeField] private DoorDirection doorDirection;
     [SerializeField] private bool canOpen = true;
     [SerializeField] private float speed = 2f;
 
     [SerializeField] private float maxMovement = 10f;
 
-    public enum DoorDirection
+    private enum DoorDirection
     {
         Up,
         Down,
@@ -16,59 +18,56 @@ public class AutoDoor : MonoBehaviour
         Right
     }
 
-    [SerializeField] private DoorDirection doorDirection;
-    void Start()
+    private void Start()
     {
         door = this.gameObject;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (canOpen == false) return;
+        if (!canOpen) return;
 
-        if (doorDirection == DoorDirection.Up)
+        switch (doorDirection)
         {
-            door.transform.Translate(Vector3.up * maxMovement * Time.deltaTime * speed);
-        }
-        else if (doorDirection == DoorDirection.Down)
-        {
-            door.transform.Translate(Vector3.down * maxMovement * Time.deltaTime * speed);
-        }
-        else if (doorDirection == DoorDirection.Left)
-        {
-            door.transform.Translate(Vector3.left * maxMovement * Time.deltaTime * speed);
-        }
-        else if (doorDirection == DoorDirection.Right)
-        {
-            door.transform.Translate(Vector3.right * maxMovement * Time.deltaTime * speed);
+            case DoorDirection.Up:
+                door.transform.Translate(Vector3.up * maxMovement * Time.deltaTime * speed);
+                break;
+            case DoorDirection.Down:
+                door.transform.Translate(Vector3.down * maxMovement * Time.deltaTime * speed);
+                break;
+            case DoorDirection.Left:
+                door.transform.Translate(Vector3.left * maxMovement * Time.deltaTime * speed);
+                break;
+            case DoorDirection.Right:
+                door.transform.Translate(Vector3.right * maxMovement * Time.deltaTime * speed);
+                break;
+            default: //Default movement direction UP
+                door.transform.Translate(Vector3.up * maxMovement * Time.deltaTime * speed);
+                break;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (canOpen == false) return;
+        if (!canOpen) return;
 
-        if (doorDirection == DoorDirection.Up)
+        switch (doorDirection)
         {
-            door.transform.Translate(Vector3.down * maxMovement * Time.deltaTime * speed);
+            case DoorDirection.Up:
+                door.transform.Translate(Vector3.down * maxMovement * Time.deltaTime * speed);
+                break;
+            case DoorDirection.Down:
+                door.transform.Translate(Vector3.up * maxMovement * Time.deltaTime * speed);
+                break;
+            case DoorDirection.Left:
+                door.transform.Translate(Vector3.right * maxMovement * Time.deltaTime * speed);
+                break;
+            case DoorDirection.Right:
+                door.transform.Translate(Vector3.left * maxMovement * Time.deltaTime * speed);
+                break;
+            default:
+                door.transform.Translate(Vector3.down * maxMovement * Time.deltaTime * speed);
+                break;
         }
-        else if (doorDirection == DoorDirection.Down)
-        {
-            door.transform.Translate(Vector3.up * maxMovement * Time.deltaTime * speed);
-        }
-        else if (doorDirection == DoorDirection.Left)
-        {
-            door.transform.Translate(Vector3.right * maxMovement * Time.deltaTime * speed);
-        }
-        else if (doorDirection == DoorDirection.Right)
-        {
-            door.transform.Translate(Vector3.left * maxMovement * Time.deltaTime * speed);
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
