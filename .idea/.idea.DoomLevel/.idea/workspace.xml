@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51c94fc9-2d0b-4034-972d-923d066993d5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/AutoDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scsripts/AutoDoor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DoomLevel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DoomLevel/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scsripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/AutoDoor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/AutoDoor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/Doors.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/Doors.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/Player.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/Player.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/SecretSwitch.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/SecretSwitch.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +30,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scsripts/AutoDoor.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -114,7 +122,9 @@
       <updated>1761923585645</updated>
       <workItem from="1761923588503" duration="183000" />
       <workItem from="1761923845223" duration="582000" />
-      <workItem from="1761924444584" duration="944000" />
+      <workItem from="1761924444584" duration="3975000" />
+      <workItem from="1761941745531" duration="2571000" />
+      <workItem from="1761974150466" duration="5125000" />
     </task>
     <servers />
   </component>

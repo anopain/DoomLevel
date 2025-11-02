@@ -2307,7 +2307,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f0932d8eee66a468be1f3ac78c4aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Doors
+  door: {fileID: 0}
+  doorDirection: 0
+  canOpen: 1
   isOpen: 0
+  speed: 2
+  maxMovement: 300
 --- !u!65 &148419379
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10195,7 +10200,7 @@ GameObject:
   - component: {fileID: 320959301}
   - component: {fileID: 320959300}
   - component: {fileID: 320959303}
-  - component: {fileID: 320959302}
+  - component: {fileID: 320959304}
   m_Layer: 0
   m_Name: Switch (3)
   m_TagString: Untagged
@@ -10274,20 +10279,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320959297}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &320959302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320959297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edba52484ce5df8478732b030bcaa6fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SecretSwitch
-  isOpen: 0
-  readyToPress: 0
 --- !u!65 &320959303
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10309,6 +10300,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.6712317, y: 20.029968, z: 5.7491064}
   m_Center: {x: -2.3356216, y: 9.0149, z: 0.10185957}
+--- !u!114 &320959304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320959297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edba52484ce5df8478732b030bcaa6fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SecretSwitch
+  door: {fileID: 0}
+  doorDirection: 0
+  canOpen: 1
+  isOpen: 0
+  speed: 2
+  maxMovement: 10
+  linkedDoor: {fileID: 148419378}
+  readyToPress: 0
+  oneWay: 0
 --- !u!1 &329064397
 GameObject:
   m_ObjectHideFlags: 0
@@ -13828,9 +13840,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoDoor
   door: {fileID: 0}
+  doorDirection: 0
+  canOpen: 1
   speed: 1
   maxMovement: 300
-  doorDirection: 0
 --- !u!43 &431432112
 Mesh:
   m_ObjectHideFlags: 0
@@ -79697,9 +79710,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoDoor
   door: {fileID: 0}
+  doorDirection: 0
+  canOpen: 1
   speed: 1
   maxMovement: 300
-  doorDirection: 0
 --- !u!65 &1987367546
 BoxCollider:
   m_ObjectHideFlags: 0

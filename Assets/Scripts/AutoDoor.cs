@@ -23,6 +23,11 @@ public class AutoDoor : MonoBehaviour
         door = this.gameObject;
     }
 
+    protected void DoorToggle()
+    {
+        canOpen = !canOpen;
+        Debug.Log($"{name} is now {(canOpen ? "Open" : "Closed")}");
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (!canOpen) return;
