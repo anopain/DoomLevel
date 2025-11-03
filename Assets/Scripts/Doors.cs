@@ -23,7 +23,7 @@ public class Doors : MonoBehaviour
     }
 
     private void Start()
-    {
+    {        
         door = this.gameObject;
         closedPosition = door.transform.position;
         SetDoorDirectionVector();
@@ -33,7 +33,7 @@ public class Doors : MonoBehaviour
     private void Update()
     {
         Vector3 targetPosition = isOpen ? openPosition : closedPosition;
-        door.transform.position = Vector3.Lerp(door.transform.position, targetPosition, Time.deltaTime * speed)
+        door.transform.position = Vector3.Lerp(door.transform.position, targetPosition, Time.deltaTime * speed);
     }
     public void CanOpenToggle()
     {
@@ -76,7 +76,7 @@ public class Doors : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!canOpen) return;
-
+/*
         switch (doorDirection)
         {
             case DoorDirection.Up:
@@ -95,12 +95,15 @@ public class Doors : MonoBehaviour
                 door.transform.Translate(Vector3.up * maxMovement * Time.deltaTime * speed);
                 break;
         }
+*/        isOpen = true;
+    
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!canOpen) return;
 
+/*
         switch (doorDirection)
         {
             case DoorDirection.Up:
@@ -119,6 +122,7 @@ public class Doors : MonoBehaviour
                 door.transform.Translate(Vector3.down * maxMovement * Time.deltaTime * speed);
                 break;
         }
+*/        isOpen = false;
     }
 
     private void OpenDoor(DoorDirection doorDir)
