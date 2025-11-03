@@ -6,6 +6,7 @@ public class Doors : MonoBehaviour
     [SerializeField] private DoorDirection doorDirection;
     [SerializeField] private bool canOpen = true;
     [SerializeField] private bool isOpen = false;
+    [SerializeField] private bool triggerOnly = false;
     [SerializeField] private float speed = 2f;
 
     [SerializeField] private float maxMovement = 10f;
@@ -75,7 +76,7 @@ public class Doors : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!canOpen) return;
+        if (!canOpen || triggerOnly) return;
 /*
         switch (doorDirection)
         {
@@ -101,7 +102,7 @@ public class Doors : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!canOpen) return;
+        if (!canOpen || triggerOnly) return;
 
 /*
         switch (doorDirection)

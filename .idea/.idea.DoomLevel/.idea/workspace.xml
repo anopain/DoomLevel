@@ -7,15 +7,7 @@
     <list default="true" id="51c94fc9-2d0b-4034-972d-923d066993d5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DoomLevel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DoomLevel/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scsripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/AutoDoor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/AutoDoor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/Doors.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/Doors.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/Player.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/Player.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/SecretSwitch.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scsripts/SecretSwitch.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Doors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Doors.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,6 +117,7 @@
       <workItem from="1761924444584" duration="3975000" />
       <workItem from="1761941745531" duration="2571000" />
       <workItem from="1761974150466" duration="5125000" />
+      <workItem from="1762186595744" duration="1232000" />
     </task>
     <servers />
   </component>
