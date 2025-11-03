@@ -1,9 +1,9 @@
 using UnityEngine;
-public class SecretSwitch : Doors
+
+public class RedKeyCard : Doors
 {
     [SerializeField] private Doors linkedDoor;
     [SerializeField] private bool readyToPress = false;
-    [SerializeField] private bool oneWay = false;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -22,7 +22,10 @@ public class SecretSwitch : Doors
     private void Update()
     {
         if (!readyToPress || !Player.Instance.interacting) return;
-        linkedDoor.DoorOpenToggle();    
+        {
+            linkedDoor.CanOpenToggle();
 //        Debug.Log("Secret Switch toggled. isOpen: " + isOpen);
+            Destroy(this.gameObject, 1);
+        }
     }
 }
