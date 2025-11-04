@@ -24,8 +24,8 @@ public class Doors : MonoBehaviour
     }
 
     private void Start()
-    {        
-        door = this.gameObject;
+    {
+        door = door != null ? door : this.gameObject;
         closedPosition = door.transform.position;
         SetDoorDirectionVector();
         openPosition = door.transform.position + doorDirectionVector.normalized * maxMovement;
@@ -40,12 +40,13 @@ public class Doors : MonoBehaviour
     {
         canOpen = !canOpen;
     }
+    public void TriggerOnlyToggle()
+    {
+         triggerOnly = !triggerOnly;
+    }
     public void DoorOpenToggle()
     {
         isOpen = !isOpen;
-//        if (isOpen) OpenDoor(doorDirection);
-//        else CloseDoor(doorDirection);
-//        Debug.Log($"{name} is now {(canOpen ? "Open" : "Closed")}");
     }
 
     private void SetDoorDirectionVector()
@@ -77,53 +78,14 @@ public class Doors : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!canOpen || triggerOnly) return;
-/*
-        switch (doorDirection)
-        {
-            case DoorDirection.Up:
-                door.transform.Translate(Vector3.up * maxMovement * Time.deltaTime * speed);
-                break;
-            case DoorDirection.Down:
-                door.transform.Translate(Vector3.down * maxMovement * Time.deltaTime * speed);
-                break;
-            case DoorDirection.Left:
-                door.transform.Translate(Vector3.left * maxMovement * Time.deltaTime * speed);
-                break;
-            case DoorDirection.Right:
-                door.transform.Translate(Vector3.right * maxMovement * Time.deltaTime * speed);
-                break;
-            default: //Default movement direction UP
-                door.transform.Translate(Vector3.up * maxMovement * Time.deltaTime * speed);
-                break;
-        }
-*/        isOpen = true;
+            isOpen = true;
     
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!canOpen || triggerOnly) return;
-
-/*
-        switch (doorDirection)
-        {
-            case DoorDirection.Up:
-                door.transform.Translate(Vector3.down * maxMovement * Time.deltaTime * speed);
-                break;
-            case DoorDirection.Down:
-                door.transform.Translate(Vector3.up * maxMovement * Time.deltaTime * speed);
-                break;
-            case DoorDirection.Left:
-                door.transform.Translate(Vector3.right * maxMovement * Time.deltaTime * speed);
-                break;
-            case DoorDirection.Right:
-                door.transform.Translate(Vector3.left * maxMovement * Time.deltaTime * speed);
-                break;
-            default:
-                door.transform.Translate(Vector3.down * maxMovement * Time.deltaTime * speed);
-                break;
-        }
-*/        isOpen = false;
+            isOpen = false;
     }
 
     private void OpenDoor(DoorDirection doorDir)

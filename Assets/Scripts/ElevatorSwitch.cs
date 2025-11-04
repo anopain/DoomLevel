@@ -1,9 +1,9 @@
 using UnityEngine;
-
-public class RedKeyCard : MonoBehaviour
+public class ElevatorSwitch : MonoBehaviour
 {
-    [SerializeField] private Doors linkedDoor;
+    [SerializeField] private Elevator linkedDoor;
     [SerializeField] private bool readyToPress = false;
+    [SerializeField] private bool oneWay = false;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -22,11 +22,8 @@ public class RedKeyCard : MonoBehaviour
     private void Update()
     {
         if (!readyToPress || !Player.Instance.interacting) return;
-        {
-            linkedDoor?.CanOpenToggle();
-            linkedDoor?.TriggerOnlyToggle();
-//        Debug.Log("Secret Switch toggled. isOpen: " + isOpen);
-            Destroy(this.gameObject, 1);
-        }
+        linkedDoor?.ElevatorToggle();
+
+        //        Debug.Log("Secret Switch toggled. isOpen: " + isOpen);
     }
 }

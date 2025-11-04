@@ -1,5 +1,5 @@
 using UnityEngine;
-public class SecretSwitch : Doors
+public class SecretSwitch : MonoBehaviour
 {
     [SerializeField] private Doors linkedDoor;
     [SerializeField] private bool readyToPress = false;
@@ -22,7 +22,8 @@ public class SecretSwitch : Doors
     private void Update()
     {
         if (!readyToPress || !Player.Instance.interacting) return;
-        linkedDoor.DoorOpenToggle();    
+        linkedDoor?.DoorOpenToggle();  
+        
 //        Debug.Log("Secret Switch toggled. isOpen: " + isOpen);
     }
 }
