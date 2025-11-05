@@ -1,7 +1,8 @@
 using UnityEngine;
-public class SecretSwitch : MonoBehaviour
+
+public class SpawnerSwitch : MonoBehaviour
 {
-    [SerializeField] private Doors linkedDoor;
+    [SerializeField] private GameObject spawnPoint;
     [SerializeField] private GameObject linkedObject;
     [SerializeField] private bool readyToPress = false;
     [SerializeField] private bool oneWay = false;
@@ -23,21 +24,16 @@ public class SecretSwitch : MonoBehaviour
     private void Update()
     {
         if (!readyToPress || !Player.Instance.interacting) return;
-        linkedDoor?.DoorOpenToggle();
-        ToggleObjectRenderer();
+        SpawnObject();
 
         //        Debug.Log("Secret Switch toggled. isOpen: " + isOpen);
     }
-
-    private void ToggleObjectRenderer()
+    private void SpawnObject()
     {
         if (linkedObject != null)
         {
-            Renderer objRenderer = linkedObject.GetComponent<Renderer>();
-            if (objRenderer != null)
-            {
-                objRenderer.enabled = !objRenderer.enabled;
-            }
+            Instantiate (linkedObject, spawnPoint.transform.position, spawnPoint.transform.rotation);
         }
     }
+
 }

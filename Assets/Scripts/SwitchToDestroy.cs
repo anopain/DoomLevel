@@ -1,5 +1,6 @@
 using UnityEngine;
-public class SecretSwitch : MonoBehaviour
+
+public class SwitchToDestroy : MonoBehaviour
 {
     [SerializeField] private Doors linkedDoor;
     [SerializeField] private GameObject linkedObject;
@@ -23,21 +24,16 @@ public class SecretSwitch : MonoBehaviour
     private void Update()
     {
         if (!readyToPress || !Player.Instance.interacting) return;
-        linkedDoor?.DoorOpenToggle();
-        ToggleObjectRenderer();
+        ToggleObjectActive();
 
         //        Debug.Log("Secret Switch toggled. isOpen: " + isOpen);
     }
-
-    private void ToggleObjectRenderer()
+    private void ToggleObjectActive()
     {
         if (linkedObject != null)
         {
-            Renderer objRenderer = linkedObject.GetComponent<Renderer>();
-            if (objRenderer != null)
-            {
-                objRenderer.enabled = !objRenderer.enabled;
-            }
+            linkedObject?.SetActive(!linkedObject.activeSelf);
         }
     }
+
 }
