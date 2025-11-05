@@ -43,8 +43,15 @@ public class AutoCapsule : MonoBehaviour
         {
 
         }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
 
-        private IEnumerator DelayedExecution()      //Slime activator
+    private IEnumerator DelayedExecution()      //Slime activator
         {
             yield return new WaitForSeconds(activateSlime);
             //            Debug.Log("Slime activated.");
